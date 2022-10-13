@@ -1,31 +1,31 @@
 USE jhoney;
 
+DROP TABLE IF EXISTS DogFriend;
+DROP TABLE IF EXISTS Dog;
+DROP TABLE IF EXISTS Food;
+
 CREATE TABLE Food
 (
-    Id INT NOT NULL,
-    Label VARCHAR(20),    
-
-    PRIMARY KEY (ID) 
+    Id INT IDENTITY PRIMARY KEY,
+    Label VARCHAR(20),        
 );
 
 CREATE TABLE Dog
 (
-    Id INT NOT NULL,
+    Id INT IDENTITY PRIMARY KEY,
     Likes INT NOT NULL,
 
     Name VARCHAR(20),
     Breed VARCHAR(20),
     BreakFastTime DATETIME
-
-    PRIMARY KEY (ID) 
+    
     FOREIGN KEY (Likes) REFERENCES Food(Id)
 );
 
 CREATE TABLE DogFriend
 (
-    Id INT NOT NULL,
+    Id INT IDENTITY PRIMARY KEY,
     FriendId INT,
-
-    PRIMARY KEY (Id),
+	
     FOREIGN KEY (FriendId) REFERENCES Dog(Id)
 );
