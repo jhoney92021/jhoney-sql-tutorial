@@ -1,3 +1,5 @@
+USE jhoney;
+
 CREATE TABLE Food
 (
     Id INT NOT NULL,
