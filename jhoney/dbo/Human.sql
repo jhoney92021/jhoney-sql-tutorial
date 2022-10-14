@@ -1,0 +1,9 @@
+USE jhoney;
+
+DROP TABLE IF EXISTS Human;
+
+CREATE TABLE Human
+(
+    Id INT IDENTITY PRIMARY KEY,
+    Name VARCHAR(20),    
+);

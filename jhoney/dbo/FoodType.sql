@@ -1,6 +1,6 @@
 USE jhoney;
 
-DROP TABLE IF EXISTS Food;
+DROP TABLE IF EXISTS FoodType;
 
 CREATE TABLE FoodType
 (
