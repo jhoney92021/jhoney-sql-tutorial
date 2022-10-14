@@ -8,8 +8,7 @@ CREATE TABLE Dog
     Likes INT NOT NULL,
 
     Name VARCHAR(20),
-    Breed VARCHAR(20),
-    BreakFastTime DATETIME
+    Breed VARCHAR(20)   
     
     FOREIGN KEY (Likes) REFERENCES Food(Id)
 );

@@ -3,11 +3,22 @@ USE jhoney;
 DROP TABLE IF EXISTS DogFriend;
 DROP TABLE IF EXISTS Dog;
 DROP TABLE IF EXISTS Food;
+DROP TABLE IF EXISTS FoodType;
+
+CREATE TABLE FoodType
+(
+    Id INT IDENTITY PRIMARY KEY,
+    Type VARCHAR(20) NOT NULL,        
+);
 
 CREATE TABLE Food
 (
     Id INT IDENTITY PRIMARY KEY,
-    Label VARCHAR(20),        
+    TypeId INT NOT NULL,    
+    Name VARCHAR(20) NOT NULL,
+	LabelName VARCHAR(20),
+    
+    FOREIGN KEY (TypeId) REFERENCES FoodType(Id)        
 );
 
 CREATE TABLE Dog
@@ -16,8 +27,7 @@ CREATE TABLE Dog
     Likes INT NOT NULL,
 
     Name VARCHAR(20),
-    Breed VARCHAR(20),
-    BreakFastTime DATETIME
+    Breed VARCHAR(20)    
     
     FOREIGN KEY (Likes) REFERENCES Food(Id)
 );

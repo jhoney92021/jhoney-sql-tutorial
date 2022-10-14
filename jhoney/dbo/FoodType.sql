@@ -1,0 +1,9 @@
+USE jhoney;
+
+DROP TABLE IF EXISTS Food;
+
+CREATE TABLE FoodType
+(
+    Id INT IDENTITY PRIMARY KEY,
+    Type VARCHAR(20) NOT NULL,        
+);
